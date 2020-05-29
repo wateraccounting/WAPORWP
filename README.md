@@ -95,7 +95,7 @@ Resampling WaPOR data to the same spatial resolution, and filtering non-crop lan
 
 
 # 4	Python scripts and test runs
-Version of the python and libraries used in the protocol
+Minimum requirement of the python and libraries used in the protocol
 * python 3.7.3
 * numpy 1.16.4
 * pandas 0.24.2 

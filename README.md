@@ -49,7 +49,7 @@ Beneficial fraction (BF) is the percentage of the water that is consumed as tran
 Adequacy can be explained by relative evapotranspiration, which is the ratio of actual evapotranspiration over potential evaporation (Equation 3) (Kharrou et al., 2013; Karimi et al., 2019).  
 
 ### 2.1.5	Reliability
-Reliability is the measure of the temporal uniformity of water delivery in accordance with the agreement or required, which can be quantified as the temporal variation of relative evapotranspiration (adequacy) across irrigation seasons.
+Reliability is the measure of the temporal uniformity of water delivery in accordance with the agreement or required, which can be quantified as the temporal variation of relative evapotranspiration ($\frac{ET_a}{ET_p}$).
 
 ## 2.2	Land and water productivity  
 ### 2.2.1	Biomass
@@ -130,3 +130,8 @@ Allen, R. G., Pereira, L. S., Raes, D., and Smith, M.: Crop evapotranspiration-G
 <br/>WaPOR: The FAO portal to monitor Water Productivity through Open access of Remotely sensed derived data, 23 October, FAO, Rome, Italy, 2019.
 <br/>Yilma, W. A., Opstal, J. V., Karimi, P., and Bastiaanssen, W.: Computation and spatial observation of water productivity in Awash River Basin, UNESCO-IHE, Delft, 2017.
 <br/>Zwart, S. J., and Bastiaanssen, W. G.: Review of measured crop water productivity values for irrigated wheat, rice, cotton and maize, Agricultural water management, 69, 115-133, 2004.
+
+
+```python
+
+```

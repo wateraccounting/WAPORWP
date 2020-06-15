@@ -1,11 +1,12 @@
 
-# <font color='#ff009a'> Standardized protocol for the land and water productivity analyses using WaPOR</font> 
+# <font color='#ff009a'> Standardized protocol for land and water productivity analyses using WaPOR</font> 
 ### Version 1.0
 **Water Productivity Improvement in Practice (Water-PIP)** 
 <br/>**Prepared by IHE Delft**
 <br/>**June 2020**
 
-![title](ReadmeIMG/Figmd0.PNG)
+![title](ReadmeIMG/Figmd_1.png)
+
 **Authors:** 
 * Abebe Chukalla (a.chukalla@un-ihe.org),  
 * Marloes Mul, 
@@ -31,7 +32,8 @@ With contributions from: Bich Tran, Quan Pan, Solomon Seyoum
 >b) **conda** installs any package in **conda environments**. **Install a conda package in the current Jupyter kernel**
 > <br/> <font color='#0d00ff'>import sys </font>
 > <br/> <font color='#0d00ff'>!conda install --yes --prefix {sys.prefix} 'package' </font>
-![title](ReadmeIMG/Figmd0+.PNG)
+
+![title](ReadmeIMG/Figmd_2.png)
 
 # 1	Introduction  
 ## 1.1	Importance 
@@ -51,7 +53,8 @@ The protocol estimate productivity gaps and identify bright spots from fields, s
 
 # 2	Structure of the protocol 
 The protocol has six steps.
-![title](ReadmeIMG/Figmd1.PNG)
+
+![title](ReadmeIMG/Figmd_3.png)
 
 
 ## 2.1 Performance indicators
@@ -123,9 +126,12 @@ Github: https://github.com/wateraccounting/WAPORWP
 
 ## 4.3	Test run
 ### 4.3.1	Data used
-![title](ReadmeIMG/Figmd2.PNG)
+
+![title](ReadmeIMG/Figmd_4.png)
+
 ### 4.3.2	Results
-![title](ReadmeIMG/Figmd3.PNG) 
+
+![title](ReadmeIMG/Figmd_5.png) 
 
 
 # 5	References

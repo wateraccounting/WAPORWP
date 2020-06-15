@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jul 30 14:16:35 2019
-
-@author: Bert Coerver
+UNESCO-IHE 2017
+ Authors: Tim Hessels and Bert Coerver
+ @author: Bert Coerver
 """
 import numpy as np
 import gdal
@@ -128,10 +128,10 @@ def CreateGeoTiff(fh, Array, driver, NDV, xsize, ysize, GeoT, Projection, explic
         Array[Array == NDV] = np.nan
 
 
-def MatchProjResNDV(source_file, target_fhs, output_dir, resample = 'near', dtype = 'float32', scale = None, ndv_to_zero = False):
+def MatchProjResNDV(source_file, target_fhs, output_folder, resample = 'near', dtype = 'float32', scale = None, ndv_to_zero = False):
     """
     Matches the projection, resolution and no-data-value of a list of target-files
-    with a source-file and saves the new maps in output_dir.
+    with a source-file and saves the new maps in output_folder.
     
     Parameters
     ----------
@@ -139,7 +139,7 @@ def MatchProjResNDV(source_file, target_fhs, output_dir, resample = 'near', dtyp
         The file to match the projection, resolution and ndv with.
     target_fhs : list
         The files to be reprojected.
-    output_dir : str
+    output_folder : str
         Folder to store the output.
     resample : str, optional
         Resampling method to use, default is 'near' (nearest neighbour).
@@ -155,12 +155,12 @@ def MatchProjResNDV(source_file, target_fhs, output_dir, resample = 'near', dtyp
     """
     dst_info=gdal.Info(gdal.Open(source_file),format='json')
     output_files = np.array([])
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
     for target_file in target_fhs:
         folder, fn = os.path.split(target_file)
         src_info=gdal.Info(gdal.Open(target_file),format='json')
-        output_file = os.path.join(output_dir, fn)
+        output_file = os.path.join(output_folder, fn)
         gdal.Warp(output_file,target_file,format='GTiff',
                       srcSRS=src_info['coordinateSystem']['wkt'],
                       dstSRS=dst_info['coordinateSystem']['wkt'],
@@ -186,3 +186,34 @@ def MatchProjResNDV(source_file, target_fhs, output_dir, resample = 'near', dtyp
             CreateGeoTiff(output_file, DATA, driver, NDV, xsize, ysize, GeoT, Projection)
     return output_files
 
+
+def printWaitBar(i, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
+    """
+    This function will print a waitbar in the console
+
+    Variables:
+
+    i -- Iteration number
+    total -- Total iterations
+    fronttext -- Name in front of bar
+    prefix -- Name after bar
+    suffix -- Decimals of percentage
+    length -- width of the waitbar
+    fill -- bar fill
+    """
+    import sys
+    import os
+
+    # Adjust when it is a linux computer
+    if (os.name=="posix" and total==0):
+        total = 0.0001
+
+    percent = ("{0:." + str(decimals) + "f}").format(100 * (i / float(total)))
+    filled = int(length * i // total)
+    bar = fill * filled + '-' * (length - filled)
+
+    sys.stdout.write('\r%s |%s| %s%% %s' %(prefix, bar, percent, suffix))
+    sys.stdout.flush()
+
+    if i == total:
+        print()

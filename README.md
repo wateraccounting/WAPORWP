@@ -1,20 +1,37 @@
 
-# <font color='#ff009a'> Standardized protocol for the land and water productivity analyses using WaPOR</font>
+# <font color='#ff009a'> Standardized protocol for the land and water productivity analyses using WaPOR</font> 
+### Version 1.0
 **Water Productivity Improvement in Practice (Water-PIP)** 
 <br/>**Prepared by IHE Delft**
 <br/>**June 2020**
 
 ![title](ReadmeIMG/Figmd0.PNG)
-Authors:
-* Abebe Chukalla (a.chukalla@un-ihe.org)
-* Marloes Mul
+**Authors:** 
+* Abebe Chukalla (a.chukalla@un-ihe.org),  
+* Marloes Mul, 
 * Poolad Karimi
 
-With contributions from:
-* Bich Tran
-* Quan Pan
-* Solomon Seyoum
+With contributions from: Bich Tran, Quan Pan, Solomon Seyoum
 
+#### Minimum requirement of the python and libraries used in the protocol
+* python 3.7.3
+* numpy 1.16.4
+* pandas 0.24.2 
+* GDAL 2.3.3
+* pyshp 2.1.0 
+
+### Install python and libraries (packages)
+#### i) Install python and jupyter notebook: https://www.anaconda.com/products/individual
+>Read more on Jupyter notebook: https://jupyter.org/, https://packaging.python.org/overview/
+#### ii) Install packages: 
+>a) **pip** installs python **packages** in any environment. **Install a pip package in the current Jupyter kernel**
+> <br/> <font color='#0d00ff'>import sys </font>
+> <br/> <font color='#0d00ff'>!{sys.executable} -m pip install 'package' </font>
+
+>b) **conda** installs any package in **conda environments**. **Install a conda package in the current Jupyter kernel**
+> <br/> <font color='#0d00ff'>import sys </font>
+> <br/> <font color='#0d00ff'>!conda install --yes --prefix {sys.prefix} 'package' </font>
+![title](ReadmeIMG/Figmd0+.PNG)
 
 # 1	Introduction  
 ## 1.1	Importance 
@@ -25,9 +42,11 @@ Productivity topic is interest of various stakeholders from farmer or irrigation
 ## 1.2	Protocol: objectives, scope and target audience
 The protocol is aimed at guiding users to use python script to assess land and water productivity, productivity gaps, and other performance indicators such as water consumption, beneficial fraction, equity, adequacy, reliability applying the FAO Water Productivity Open-access portal (WaPOR).  
 <br/>**Scope:** the assessment is tailored to biophysical water productivity defined as biomass or crop yield per unit of water consumption; and land productivity (i.e. biomass or crop yield); socio-economic productivity analyses is beyond the scope of the protocol.
-<br/> The full or part of the protocol can be implemented in rainfed crop production that gets the water sources from exclusively rainfall, or irrigated crop production that gets blue water from surface water, groundwater, or flood /spate/ sources. 
-<br/> The protocol applies identical crop parameters and same start and end of season dates. One can analyse multiple crops, different starting and ending dates or multiple management units by running the scripts multiple times for different masking boundary; or alternatively by upgrading the script to loop through multiple masking values in a boundary. 
-The protocol estimate productivity gaps from fields, schemes or region in similar agro-climatic zones. Implementing the protocol beyond fields/ scheme level such as comparison of indicators and assessment of productivity gaps at river basin and country levels, which could fall in different agro-climatic zones, require normalization for climate variation – which is outside the scope of the protocol.  
+
+<br/>**Scope:** the assessment is tailored to biophysical water productivity defined as biomass or crop yield per unit of water consumption, land productivity (i.e. biomass or crop yield), productivity gaps, and other irrigation performance indicators such as seasonal water consumption, seasonal reference evapotranpiration, equity, adequacy, reliability, relative water deficit, and relative biomass/yield reduction. Socio-economic productivity analyses is beyond the scope of the protocol.
+<br/> The full or part of the protocol can be implemented in rainfed crop production that gets the water sources from exclusively rainfall, or irrigated crop production that gets blue water from surface water, groundwater, or flood /spate/ sources.
+<br/> The protocol applies identical crop parameters and same start and end of season dates. One can analyse multiple crops, different starting and ending dates or identify bright spots, compare different management intervention strategies and practices at the field/irrigation systems/river basin that falls in similar agro-climatic zones by running the scripts multiple times for different masking boundary; or alternatively by upgrading the script to loop through multiple masking values in a boundary. 
+The protocol estimate productivity gaps and identify bright spots from fields, schemes or region in similar agro-climatic zones. However, comparison of indicators and assessment of productivity gaps at fields, river basin and country levels, which could fall in different agro-climatic zones, require normalization for climate variation – which is beyond the scope of the protocol.  
 <br/>**Target**: The protocol is developed for project leads, irrigation managers and researchers who could run python script. 
 
 # 2	Structure of the protocol 
@@ -74,9 +93,6 @@ The bright spots are pixels that have both land and water productivity equal or 
 ### 2.3.3 Productivity gaps
 Productivity gap of a crop at a pixel is calculated by subtracting the productivity value from the productivity target.
 
-### 2.3.4 Potential increase in production
-The potential increase in biomass/ yield production of a particular crop in an area/region of interest is calculated by adding the productivity gap across the area/region.
-
 ## 2.4 Comparison of observed and calculated values
 The aim of the comparison is check if there is consistency between observed and calculated values or data of two sources. The comparison will be done with the aid of visual graph interpretation (against 1:1 line), coefficient of determination, and coefficient of correlation. 
 
@@ -95,13 +111,6 @@ Resampling WaPOR data to the same spatial resolution, and filtering non-crop lan
 
 
 # 4	Python scripts and test runs
-Minimum requirement of the python and libraries used in the protocol
-* python 3.7.3
-* numpy 1.16.4
-* pandas 0.24.2 
-* GDAL 2.3.3
-* pyshp 2.1.0 
-
 
 ## 4.2	The python scripts
 Github: https://github.com/wateraccounting/WAPORWP

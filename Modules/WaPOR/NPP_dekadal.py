@@ -16,7 +16,7 @@ def main(Dir, Startdate='2009-01-01', Enddate='2018-12-31',
          latlim=[-40.05, 40.05], lonlim=[-30.5, 65.05],level=1, 
          version = 2, Waitbar = 1):
     """
-    This function downloads monthly WaPOR AETI data
+    This function downloads dekadal WaPOR NPP data
 
     Keyword arguments:
     Dir -- 'C:/file/to/path/'

@@ -29,7 +29,7 @@ def main(Dir, Startdate='2009-01-01', Enddate='2018-12-31',
 
     # Download data
     WaPOR.API.version=version
-    catalog=WaPOR.API.getCatalog()
+    catalog=WaPOR.API.catalog
     bbox=[lonlim[0],latlim[0],lonlim[1],latlim[1]]
     
     if level==1:

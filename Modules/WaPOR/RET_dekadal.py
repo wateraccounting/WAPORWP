@@ -33,7 +33,7 @@ def main(Dir, Startdate='2009-01-01', Enddate='2018-12-31',
     bbox=[lonlim[0],latlim[0],lonlim[1],latlim[1]]
     
     if level==1:
-        cube_code='L1_AETI_D'
+        cube_code='L1_RET_D'
     else:
         print('Invalid Level')
     

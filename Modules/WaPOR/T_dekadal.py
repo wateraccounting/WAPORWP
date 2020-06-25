@@ -33,13 +33,13 @@ def main(Dir, Startdate='2009-01-01', Enddate='2018-12-31',
     bbox=[lonlim[0],latlim[0],lonlim[1],latlim[1]]
     
     if level==1:
-        cube_code='L1_AETI_D'
+        cube_code='L1_T_D'
     elif level==2:
-        cube_code='L2_AETI_D'
+        cube_code='L2_T_D'
     elif level==3:
         print('Level 3 data only available in some areas with specific data cube code below: ')        
         for i,row in catalog.iterrows():            
-            if ('L3_AETI' in row['code'])&('_D' in row['code']):
+            if ('L3_T' in row['code'])&('_D' in row['code']):
                 print('%s: %s'%(row['caption'],row['code']))
         cube_code=input('Insert Level 3 cube code for the selected area: ')
     else:

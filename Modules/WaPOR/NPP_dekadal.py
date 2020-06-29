@@ -62,7 +62,7 @@ def main(Dir, Startdate='2009-01-01', Enddate='2018-12-31',
         amount = 0
         WaitbarConsole.printWaitBar(amount, total_amount, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
-    Dir=os.path.join(Dir,cube_code)
+    Dir=os.path.join(Dir,'WAPOR.v%s_mm-dekad-1_%s' %(version,cube_code))
     if not os.path.exists(Dir):
         os.makedirs(Dir)
         
@@ -74,9 +74,9 @@ def main(Dir, Startdate='2009-01-01', Enddate='2018-12-31',
                                                WaPOR.API.Token,
                                                print_job=False)      
               
-        filename='WAPOR.v%s_mm-dekad-1_%s.tif' %(version,row['raster_id'])
+        filename='{0}.tif'.format(row['raster_id'])
         outfilename=os.path.join(Dir,filename)       
-        download_file=os.path.join(Dir,'{0}.tif'.format(row['raster_id']))
+        download_file=os.path.join(Dir,'raw_{0}.tif'.format(row['raster_id']))
         ### Download raster file
         resp=requests.get(download_url)         
         open(download_file,'wb').write(resp.content) 

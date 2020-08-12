@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3980715.svg)](https://doi.org/10.5281/zenodo.3980715)
 
 # <font color='#ff009a'> Standardized protocol for land and water productivity analyses using WaPOR</font> 
 ### Version 1.0

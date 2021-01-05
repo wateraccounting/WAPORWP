@@ -1,132 +1,144 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3980715.svg)](https://doi.org/10.5281/zenodo.3980715)
 
-# <font color='#ff009a'> Standardized protocol for land and water productivity analyses using WaPOR</font> 
+# <font color='#ff009a'> Protocole standardisé pour l'analyse de la productivité de la terre et de l'eau en utilisant WaPOR </font> 
 ### Version 1.1
-**Water Productivity Improvement in Practice (Water-PIP)** 
-<br/>**Prepared by IHE Delft**
-<br/>**October 2020**
+**Amélioration de la Productivité de l'Eau dans la Pratique (Water-PIP)** 
+<br/>**Preparé par IHE Delft**
+<br/>**Octobre 2020**
 
 ![title](ReadmeIMG/Figmd_1.png)
 
-**Authors:** 
+**Auteurs:** 
 * Abebe Chukalla (a.chukalla@un-ihe.org),  
 * Marloes Mul, 
 * Poolad Karimi
 
-With contributions from: Bich Tran, Quan Pan, Solomon Seyoum
+Avec la contribution de: Bich Tran, Quan Pan, Solomon Seyoum
 
+Traduction en français par:
+Aymar Y. Bossa, Ph.D.
+Ozias Hounkpatin, Ph.D.
+Yacouba Yira, Ph.D.
+
+Hydro-Climate Services (HCS consultant)
+Ouagadougou, Burkina Faso
 
 # 1	Introduction 
-Productivity is defined as a measure of gains per unit of resource use (Zwart and Bastiaanssen, 2004). For agriculture purposes, the most important indicators are biophysical, economic or social gains compared to the amount of land and water used. The most commonly used productivity indicator in agriculture is yield which defines the biophysical gain per unit of land (also called land productivity). With increasing concerns about the available water resources, water productivity has gained interest. 
+La productivité est définié une mesure des gains par unité de ressource utilisée  (Zwart et Bastiaanssen, 2004). Pour les besoins agricoles, les indicateurs les plus importantssont sont les gains biophisiques, économiqueset sociaux comparés à la quantité de terre et d'eau utilisée. L'indicateur de productivité le plus couramment utilisé en agriculture est le rendement, qui définit le gain biophysique par unité de terre (également appelé la productivité de la terre). En raison des préoccupations croissantes concernant la disponibilité des ressources en eau, la productivité de l'eau fait l'objet d'un intérêt.
 
 ## 1.1	Importance 
-The combined increasing gains per unit of water and land would benefit the farmer and scheme manager as well as being beneficial at basin level.
-Farmers aim to optimise the benefit generated per unit of land, as this is their main constraint. While the top priority of the river basin authority is to allocate water resources in equitable, efficient and sustainable manner between different water uses/ users. Thus, at river basin level, the interest is to optimise productivity at river basin level while maintaining equity and sustainability as core values. Policy makers are often interested to increase production and thus national income as well as increase employment. 
+Les gains croissants par unité d'eau et de terre à la fois profiteraient à l'agriculteur et au gestionnaire des périmètre aménagés, tout en étant bénéfiques au niveau du bassin.
+Les agriculteurs cherchent à optimiser le bénéfice généré par unité de terre, car elle est leur principale contrainte. Alors que la première priorité de l'autorité de bassin versant est de répartir les ressources en eau de manière équitable, efficace et durable entre les différents utilisateurs/usages de l'eau. Ainsi, à l'échelle du bassin bersant, l'intérêt est d'optimiser la productivité à l'échelle du bassin tout en maintenant l'équité et la durabilité comme valeurs fondamentales. Les décideurs politiques sont souvent intéressés par l'augmentation de la production et donc du revenu national ainsi que par l'augmentation de l'emploi. 
 
-## 1.2	WaPOR data
-FAO’s portal to monitor Water Productivity through Open-access of Remotely sensed derived (WaPOR) was “created to provide relevant and specific information on water and biomass status to develop solutions to sustainably increase agricultural land and water productivity” . WaPOR is the first comprehensive dataset that combines water use (actual evaporation, transpiration and interception), production (net primary production), land use (land cover classification), phenology, climate (precipitation and reference evapotranspiration) and water productivity layers covering sub-Saharan Africa and the Near East and North African regions. The data is available at decadal time steps and in near real-time for the period between 2009 to present day. WaPOR datasets are available at continental scale (Level 1 at 250 m), country and river basin (Level 2 at 100 m) and project level (Level 3 at 30 m). The latest WaPOR portal (WaPOR v2.1), was improved from WaPOR v1.0 following the independent quality assessment by IHE Delft and ITC (FAO and IHE, 2019). The methodology used for compiling the WaPOR database is provided in FAO (2020a). 
+## 1.2	Les données de WaPOR
+Le portail de la FAO pour le suivi de la productivité de l'eau par l'accès libre aux produits dérivés de la télédétection (WaPOR) a été "créé pour fournir des informations pertinentes et spécifiques sur l'état de l'eau et de la biomasse afin de développer des solutions pour augmenter durablement la productivité des terres agricoles et de l'eau" . WaPOR est le premier ensemble de données complet qui combine l'utilisation de l'eau (évaporation réelle, transpiration et interception), la production (production primaire nette), l'utilisation des terres (classification de l'occupation des terres), la phénologie, le climat (précipitations et évapotranspiration de référence) et les couches de productivité de l'eau couvrant l'Afrique subsaharienne et les régions du Proche-Orient et de l'Afrique du Nord. Les données sont disponibles au pas décadaires et en temps quasi réel pour la période allant de 2009 à nos jours. Les ensembles de données WaPOR sont disponibles à l'échelle du continent (niveau 1 à 250 m), du pays et du bassin versant (niveau 2 à 100 m) et du projet (niveau 3 à 30 m). Le toute dernière version du portail de WaPOR (WaPOR v2.1), a été amélioré en comparaison à WaPOR v1.0 suite à une évaluation indépendante de la qualité réalisée par l'IHE Delft et l'ITC (FAO et IHE, 2019). La méthodologie utilisée pour compiler la base de données WaPOR est fournie dans FAO (2020a).
 
-## 1.3	Ground data
-Ground data such as boundary of the farm (to download WaPOR data and filter non cropped area), moisture content of fresh biomass (to convert dry matter to biomass), above ground over total biomass (to estimate the above ground biomass), start and end of seasons (to aggregate water and climate data per crop season), harvest index (to derive crop yield from above ground biomass) and crop coefficient (to estimate potential evapotranspiration from reference evapotranspiration) are required.
+## 1.3	Données de terrain
+Les données de terrain telles que les limites de l'exploitation (pour télécharger les données de WaPOR et filtrer les zones non cultivées), la teneur en eau de la biomasse fraîche (pour convertir la matière sèche en biomasse), la biomasse au dessus du sol sur la biomasse totale (pour estimer la biomasse au-dessus du sol), le début et la fin des saisons (pour agréger les données sur l'eau et le climat par saison de culture), l'indice de récolte (pour calculer le rendement des cultures à partir de la biomasse au-dessus du sol) et le coefficient cultural (pour estimer l'évapotranspiration potentielle à partir de l'évapotranspiration de référence) sont nécessaires.
+
+
  
-## 1.4	Protocol: objectives, scope and target audience
-The protocol is aimed at guiding users to understand the different layers contained in the FAO Water Productivity Open-access portal (WaPOR) which can be used for land and water productivity analyses. It provides python scripts which can be used to calculate land and water productivity and other performance indicators such as water consumption, beneficial fraction, equity, adequacy, reliability as well as estimating productivity gaps. For each step, the protocol provides information about the assumptions used and provides links to reference materials.  
-<br/>**Scope:** The protocol is tailored to biophysical water productivity with respect to consumed water use and land productivity at an areas (fields, and schemes) in similar agro-climatic zones. The protocol can be applied to crop production regardless of the water sources (e.g. from exclusively rainfall (rainfed), or irrigation (augmented through surface water and/or groundwater, or flood /spate)). The protocol is developed for agricultural areas with a single crop and same cropping season, which can vary between years. Implementing the protocol beyond fields/ scheme level such as at river basin and country levels, which could fall in different agro-climatic zones, require normalization for climate variation – which is outside the scope of the protocol.   
-<br/>**Target**: The protocol is developed for project leads, irrigation managers and researchers who have a basic understanding of python and agricultural practices.  
+## 1.4	Protocole: objectifs, portée et cible
+Le protocole vise à guider les utilisateurs dans la compréhension des différentes couches contenues dans le portail de la FAO pour le suivi de la productivité de l'eau par l'accès libre aux produits dérivés de la télédétection (WaPOR) , qui peut être utilisé pour l'analyse de la productivité des terres et de l'eau. Il fournit des scripts/codes python qui peuvent être utilisés pour calculer la productivité des terres et de l'eau et d'autres indicateurs de performance tels que la consommation d'eau, la fraction bénéfique, l'équité, l'adéquation, la fiabilité ainsi que l'estimation des écarts de productivité. Pour chaque étape, le protocole fournit des informations sur les hypothèses utilisées et propose des liens vers des documents de référence.
+<br/>**Portée:** Le protocole est adapté à la productivité biophysique de l'eau en ce qui concerne la consommation de l'eau et la productivité des terres dans des zones (champs et périmètre) situées dans des espaces agroclimatiques similaires. Le protocole peut être appliqué à la production végétale, indépendemment des sources d'eau (par exemple, exclusivement pluviale, ou en irrigation (augmentée par les eaux de surface et/ou souterraines, ou par les inondations /crues)). Le protocole est développé pour les zones agricoles ayant une seule culture et une même saison de culture, qui peut varier d'une année à l'autre. L'application du protocole au-delà de l'echelle des champs/périmètres, par exemple au niveau des bassins versant et des pays, qui pourraient se situer dans des zones agro-climatiques différentes, nécessite une normalisation des variations climatiques - ce qui va au delà du champ d'application du protocole. 
+<br/>**Cible**: Le protocole a été développé pour les chefs de projet, les gestionnaires d'irrigation et les chercheurs qui ont une compréhension de base de python et des pratiques agricoles
 
-# 2	Installation requirements
-The scripts to download and process the WaPOR data for land and water productivity assessment are developed in the python programming language. The scripts can be downloaded from the wateraccounting repository on GitHub  and run in Jupyter Notebook. Beginners of python programming are advised to follow the OCW of IHE Delft on python scripting before starting with implementing the provided scripts . A beginning programmer should be able to run the scripts, it is advised to run them using Jupyter notebook. The following sections describe the installation requirements. 
-## 2.1	Running from Jupyter notebook
-### The requirement of the python and libraries used in the protocol
+
+# 2	Conditions d'installation
+Les scripts/codes permettant de télécharger et traiter les données de WaPOR pour l'évaluation de la productivité des terres et de l'eau sont développés dans le langage de programmation python. Les scripts/codes peuvent être téléchargés à partir du repertoire de comptabilité de l'eau sur GitHub et exécutés dans Jupyter Notebook. Il est conseillé aux débutants en programmation python de suivre le cours ouvert en ligne de l'IHE Delft sur les scripts/codes python avant de commencer à appliquer les scripts/codes fournis. Un programmeur débutant devrait être capable d'exécuter les scripts/codes, il est conseillé de les exécuter en utilisant Jupyter notebook. Les sections suivantes décrivent les conditions d'installation.
+
+## 2.1	Exécution à partir de Jupyter notebook
+### Python et librairies requis pour utiliser le protocole
 * python 3.7.3
 * numpy 1.16.4
 * pandas 0.24.2 
 * GDAL 2.3.3
 * pyshp 2.1.0 
 
-## 2.1	Install python, Jupyter notebook and libraries (packages)
-#### i) Install python and jupyter notebook using the Anaconda distribution: https://www.anaconda.com/products/individual
-Use the anaconda installer, which is tailored to different operating system: window (64-Bit and 32-Bit), MacOS (64-Bit) or Linux system.
->Read more on Jupyter notebook: https://jupyter.org/, https://packaging.python.org/overview/
+## 2.1	Installer python, Jupyter notebook et les librairies (packages)
+#### i) Installer python et jupyter notebook en utilisant la distribution Anaconda : https://www.anaconda.com/products/individual
+Utiliser l'installateur anaconda, qui est adapté à différent système d'exploitation: window (64-Bit and 32-Bit), MacOS (64-Bit) or Linux system.
+>Plus d'information sur Jupyter notebook à: https://jupyter.org/, https://packaging.python.org/overview/
 
-#### ii) Install packages: 
-##### Packages such as GDAL, pyshp can be installed using pip or conda. 
->a) **pip** installs python **packages** in any environment. **Install a pip package in the current Jupyter kernel**
-Pip is the Python Packaging Authority’s recommended tool for installing packages from the Python Package Index (PyPI), which is a repository of software for the Python programming language (https://pypi.org/). Pip installs python packages in any environment. Type the following codes to Install a pip package in the current Jupyter kernel: 
+#### ii) Installer les packages: 
+##### Les packages tels que GDAL, pyshp peuvent être installés en utilisant pip ou conda. 
+>a) **pip** installe les **packages** python dans n'importe quel environnement. **Installer un  package pip dans le (noyau) Jupyter kernel actuel**
+Pip est l'outil Packaging Authority’s (Autorité de packetage) de Python recommandé pour l'installation des packages à partir de Python Package Index (PyPI), qui est un dépôt des logiciels pour la programmation dans le language Python (https://pypi.org/). Pip installe les packages python dans n'importe quel environnement. Cliquer sur le code suivant pour installer un papckage pip dans le Jupyter kernel (noyau) actuel: 
 > <br/> <font color='#0d00ff'>import sys </font>
 > <br/> <font color='#0d00ff'>!{sys.executable} -m pip install 'package' </font>
 
->b) **conda** installs any package in **conda environments**. **Install a conda package in the current Jupyter kernel**
- Conda is a cross platform package and environment manager that installs and manages conda packages from the Anaconda repository (https://repo.anaconda.com/) and the Anaconda Cloud (https://anaconda.org/). Conda installs any package in conda environments. Type the following codes to Install a conda package in the current Jupyter kernel:
+>b) **conda** installe tout package dans **conda environments**. **Installer un package conda dans le (noyau) Jupyter kernel actuel**
+ Conda est un gestionnaire de packages et d'environnement multi-plateforme qui installe et gère les paquets conda à partir du dépôt Anaconda(https://repo.anaconda.com/) et de Anaconda Cloud (https://anaconda.org/). Conda installe tout package dans des environments conda. Cliquer sur le code suivant pour installer un papckage conda dans le Jupyter kernel (noyau) actuel:
 > <br/> <font color='#0d00ff'>import sys </font>
 > <br/> <font color='#0d00ff'>!conda install --yes --prefix {sys.prefix} 'package' </font>
-More tutorials on conda commands: https://docs.conda.io/projects/conda/en/latest/user-guide/index.html
+Plus de tutoriels sur les commandes conda: https://docs.conda.io/projects/conda/en/latest/user-guide/index.html
 
 ![title](ReadmeIMG/Figmd_2.png)
 
-# 3	Structure of the protocol 
-The protocol has six modules, which are described in detail in the following sections. For each of the modules a Jupyter notebook was developed, containing the scripts. Module 0 focusses on downloading WaPOR data on actual water consumption (ET), actual transpiration, reference evapotranspiration and net primary production. In Module 1, the pre-processing of the data to match the spatial resolution and remove non-crop pixels are conducted. In Module 2, the seasonal water consumption (transpiration, actual evapotranspiration, reference evapotranspiration and potential evapotranspiration) and seasonal net primary production are computed. In Module 3, different performance indicators are calculated. In Module 4, land and water productivity are computed. And finally in Module 5, bright spots and productivity gaps are calculated. 
+# 3	Structure du protocole 
+The protocole comprend six modules, qui sont décrits en détail dans les sections suivantes. Un notebook Jupyter a été développé pour chaque module, containant des scripts/codes. Le module 0 porte sur le téléchargement des données de WaPOR sur la consommation d'eau réelle (ET), la transpiration réelle, l'évapotranspiration de référence et la production primaire nette. Dans le module 1, les données sont prétraitées pour correspondre la résolution spatiale et supprimer les pixels non concernés. Dans le module 2, la consommation d'eau saisonnière (transpiration, évapotranspiration réelle, évapotranspiration de référence et évapotranspiration potentielle) et la production primaire nette saisonnière sont calculées. Dans le module 3, différents indicateurs de performance sont calculés. Dans le module 4, la productivité des terres et de l'eau est calculée. Enfin, dans le module 5, les zones propères et les écarts de productivité sont calculés. 
 
 ![title](ReadmeIMG/Figmd_3.png)
 
-## 3.1	Download WaPOR data (Module 0)
-##### Step 0a Import modules/libraries
-##### Step 0b Read geographical extent of the study area
-##### Step 0c Bulk-download WaPOR data for the study area extent
+## 3.1	Télécharger les données de WaPOR (Module 0)
+##### Etape 0a - Importer les modules/librairies
+##### Etape 0b - Lire l'étendue géographique de la zone d'étude
+##### Etape 0c - Télécharger en bloc les données de WaPOR de la zone d'étude
 
-## 3.2	Pre-processing WaPOR data (Module 1) 
-##### Step 1a Import modules/libraries 
-##### Step 1b Resample raster data 
-##### Step 1c Filter non-cropped area using land cover map and project boundary 
+## 3.2	Pré-traiter les données de WaPOR (Module 1) 
+##### Etape 1a - Importer les modules/librairies
+##### Etape 1b - Rééchantillonner les données
+##### Etape 1c - Filtrer les zone non-cultivées en utilisant la carte d'occupation des terres et les limites du projet 
 
-## 3.3	Computing Seasonal Water Consumption & Net Primary Production (Module 2) 
-##### Step 2a Set up: Import modules/libraries 
-##### Step 2b Defining function and crop season
-##### Step 2b Calculate seasonal T, ET, RET, ETp, NPP 
+## 3.3	Calcul de la consommation d'eau saisonnière & de la Production Primaire nette (Module 2) 
+##### Etape 2a - Réglage: Importer les modules/librairies 
+##### Etape 2b - Définition des fonctions et la saison culturale
+##### Etape 2c - Calculer la T, ET, ET de Référence (RET), ETp, NPP (Production primaire nette) saisonnières
 
-## 3.4	Calculate performance indicators (Module 3)
-##### Step 3a Set up 
-##### Step 3b Calculate Uniformity
-Uniformity measures the evenness of the water supply in various portion of a field. Equity is the measure of spatial uniformity of water use among users, which can be water users at a tertiary unit or among tertiary units under a particular secondary canal. In the absence of plot or tertiary boundaries, the spatial uniformity of water use on a per unit area (pixel) bases can be used to measure uniformity or equity. It is calculated as the coefficients of variation (CV) of seasonal ETa in the area of interest. A CV of 0 to 10 % is defined as good uniformity, CV of 10 to 25 % as fair uniformity and CV > 25 % as poor uniformity (Bastiaanssen et al., 1996; Molden and Gates, 1990; Karimi et al., 2019).
+## 3.4	Calculer les indicateurs de performance (Module 3)
+##### Etape 3a - Réglage 
+##### Calculer l'uniformité
+L'uniformité mesure l'égalité de l'apport d'eau dans les différentes portions du champ. L'équité est la mesure de l'uniformité spatiale de l'utilisation de l'eau parmi les utilisateurs, qui peuvent être des utilisateurs d'eau dans une unité tertiaire ou parmi des unités tertiaires sous un canal secondaire particulier. En l'absence de limites de parcelles ou d'unités tertiaires, l'uniformité spatiale de l'utilisation de l'eau sur la base de l'unité de surface (pixel) peut être utilisée pour mesurer l'uniformité ou l'équité. Elle est calculée comme étant le coefficient de variation (CV) de l'ETR saisonnière dans la zone d'intérêt. Un CV de 0 à 10 % est défini comme étant une bonne uniformité, un CV de 10 à 25 % comme une uniformité acceptable et un CV > 25 % comme une mauvaise uniformité.
 
-##### Step 3c Calculate Efficiency (Beneficial fraction)
-Beneficial fraction (BF) is measures the efficiency of on farm water and agronomic practices in converting water for crop growth. It is the percentage of the water that is consumed as transpiration compared to overall field water consumption (ETa). 
+##### Etape 3c - Calculer l'efficité (fraction bénéfique)
+La Fraction Bénéfique(BF) est une mesure de l'efficacité de l'eau agricole et des pratiques agricole dans l'utilisation de l'eau pour la production culturale. Il s'agit du pourcentage de l'eau consommée sous forme de transpiration par rapport à la consommation totale d'eau du champ (ETa-ETr). 
 
-##### Step 3d Calculate Adequacy
-Adequacy (A) is the measure of the degree of agreement between available water and crop water requirements in an irrigation system (Bastiaanssen and Bos, 1999; Clemmens and Molden, 2007). It is calculated as the relative evapotranspiration, which is the ratio of actual evapotranspiration over potential evaporation (Equation 3) (Kharrou et al., 2013; Karimi et al., 2019). 
+##### Etape 3d - Calculer l'adquation
+L'adequation (A) est la mesure du degré de concordance entre l'eau disponible et les besoins en eau des cultures dans un système d'irrigation (Bastiaanssen et Bos, 1999; Clemmens et Molden, 2007). Il est calculé comme l'évapotranspiration relative, qui est le rapport entre l'évapotranspiration réelle et l'évaporation potentielle (Equation 3) (Kharrou et al., 2013; Karimi et al., 2019). 
 
-##### Step 3e Calculate Relative Water Deficit
-Relative Water Deficit (RWD) provides an indication on the level of water shortage found in the irrigation system. It is applied for a mono crop system, where the actual ET is compared to the maximum ET.
+##### Step 3e Calculer le déficit hydrique relatif
+Le le déficit hydrique relatif (RWD) donne une indication sur le niveau de pénurie d'eau constaté dans le système d'irrigation. Il est appliqué pour un système de monoculture, où l'ET réelle est comparée à l'ET maximale.
 
-## 3.5	Land and water productivity (Module 4)
-##### Step 4a Set up 
-##### Step 4b Calculate land productivity: i) biomass and ii) crop yield
-Land productivity is defined as the above-ground biomass production or yield in ton/ha/season.
+## 3.5	Productivité de la terre et de l'eau (Module 4)
+##### Etape 4a - Réglage
+##### Etape 4b - Calculer la productivité de la terre: i) de la biomasse et ii) le rendement de la culture 
+La productivité dela terre est définie comme la production de biomasse au dessus du sol ou le rendement en tonnes/ha/saison.
 
-##### Step 4c Calculate i) biomass water productivity and ii) crop water productivity
-Biomass and crop Water productivity is estimated as the ratio of above-ground biomass or yield over actual evapotranspiration.
+##### Etape 4c - Calculer la : i) productivité en biomasse de l'eau et ii) la productivité culturale de l'eau
+La productivité en biomasse et en culture de l'eau est estimée comme le rapport entre la biomasse au dessus du sol ou le rendement et l'évapotranspiration réelle.
 
-## 3.6	Productivity gaps and production projection (Module 5)
-##### Step 5a Set up 
-##### Step 5b Calculate the target productivity
-The target productivity is a target for land and water productivity which is attainable under the local climatic conditions. This step of the script describes how the target is set and how bright spots are identified and how the productivity gap (related to the target) is estimated.
-The target can be set for individual years to incorporate specific wet or dry conditions during that particular year. In our case we set the target at the 95 percentile of the land or water productivity for each year (Figure 2), this can be changed in the script. The corresponding ETa is also defined as the target ETa.
+## 3.6	Ecarts de productivité et projection de production (Module 5)
+##### Etape 5a - Réglages
+##### Etape 5b - Calculer l'objectif de productivité 
+L'objectif de productivité est une cible de productivité des terres et de l'eau qui est réalisable dans les conditions climatiques locales. Cette étape du script/code décrit comment l'objectif est fixé et comment les zones prospères sont identifiées et comment l'écart de productivité (lié à l'objectif) est estimé.
+L'objectif peut être fixé pour des années individuelles afin d'intégrer des conditions humides ou sèches spécifiques au cours de cette année particulière. Dans notre cas, nous avons fixé l'objectif au 95e centile de la productivité des terres ou de l'eau pour chaque année (figure 2), cela peut être modifié dans le script/code. L'ETa correspondant est également défini comme l'ETa cible.
 
-##### Step 5c Identify bright spots 
-The bright spots are fields that have both land and water productivity equal or greater than the targets. The location of the bright spots are then mapped for the individual targets (biomass or yield and water productivity as well as areas where both targets are exceeded
-##### Step 5d Calculate productivity gaps¶
-Productivity gap is defined as the difference between the productivity at plot level and the target productivity. The production gap is defined as the sum of the land productivity gaps of a particular crop over area. The potential increase in biomass/ yield production of a particular crop in an area of interest is calculated by adding the productivity gap across the area. 
+##### Etape 5c - Identifier les zones prospères
+Les zones prospères sont les champs dont la productivité des terres et de l'eau est égale ou supérieure aux objectifs. L'emplacement des zones prospères est ensuite cartographié pour les objectifs individuels (biomasse ou rendement et productivité de l'eau ainsi que les zones où les deux objectifs sont dépassés)
 
-# 4	Example, Protocol applied at Xinavane irrigation scheme
-### 4.1	Data
-Case: crop = sugarcane, country = Mozambique, project = Xinavane
-WaPOR and local data of Table 5 are used to implement the protocol. The Level 2 data used in this study include actual evapotranspiration and interception and net primary production at a decadal timescale and annual land cover classification. In addition, decadal precipitation at 5 km resolution, decadal reference evapotranspiration at 25 km resolution. The precipitation and reference evapotranspiration datasets were downscaled to 100 m resolution.
+##### Etape 5d - calculer les écarts de productivité¶
+L'écart de productivité est défini comme la différence entre la productivité au niveau de la parcelle et l'objectif de productivité. L'écart de production est défini comme la somme des écarts de productivité des terres d'une culture particulière sur une superficie donnée. L'augmentation potentielle de la production de biomasse/rendement d'une culture particulière dans une zone d'intérêt est calculée en additionnant l'écart de productivité sur l'ensemble de la zone.
+
+# 4	Example, Protocole appliqué au périmètre irrigué de Xinavane
+### 4.1	Données
+Case: culture = canne à sucre, pays = Mozambique, projet = Xinavane
+Les données de WaPOR et locale du Tableau 5 sont utilisées pour l'application du protocole. Les données du niveau 2 utilisées dans cette étude comprennent l'évapotranspiration et l'interception réelles ainsi que la production primaire nette à une échelle décadaire et la classification annuelle de l'occupation des terres. En outre, les précipitations décadaires ont une résolution de 5 km, l'évapotranspiration décadaire de référence à une résolution de 25 km. Les échelles des ensembles de données de précipitations et d'évapotranspiration de référence ont été reduites à une résolution de 100 m.
 ![title](ReadmeIMG/Figmd_4.png)
 
-### 4.2	WaPOR data consistency 
-It is recommended that consistency check and validation of WapOR data are done.  
+### 4.2	Cohérence des données de WaPOR
+Il est recommandé de procéder à un contrôle de cohérence et à une validation des données de WaPOR.  
 
-### 4.3.2	Results
+### 4.3.2	Resultats
 ![title](ReadmeIMG/Figmd_5.png) 
 ![title](ReadmeIMG/Figmd_6.png) 
 

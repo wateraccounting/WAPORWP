@@ -21,8 +21,8 @@ class __WaPOR_API_class(object):
         self.path_download=r'https://io.apps.fao.org/gismgr/api/v1/download/'
         self.path_query=r'https://io.apps.fao.org/gismgr/api/v1/query/'
         self.path_jobs=r'https://io.apps.fao.org/gismgr/api/v1/catalog/workspaces/WAPOR/jobs/'
-        self.workspaces={1: 'WAPOR',2: 'WAPOR_2'}
-        self.version=1
+        self.workspaces={2: 'WAPOR_2'}
+        self.version=2
                 
     def getCatalog(self,level=None,cubeInfo=True):
         '''
@@ -39,10 +39,8 @@ class __WaPOR_API_class(object):
             cubes_measure=[]
             cubes_dimension=[]
             for cube_code in df['code'].values:                
-                cubes_measure.append(self._query_cubeMeasures(cube_code,
-                                                                   version=self.version))
-                cubes_dimension.append(self._query_cubeDimensions(cube_code,
-                                                                   version=self.version))
+                cubes_measure.append(self._query_cubeMeasures(cube_code))
+                cubes_dimension.append(self._query_cubeDimensions(cube_code))
             df['measure']=cubes_measure
             df['dimension']=cubes_dimension
         self.catalog=df
@@ -90,14 +88,14 @@ class __WaPOR_API_class(object):
         except:
             print('ERROR: Data for specified cube code and version is not available')
     
-    def _query_cubeMeasures(self,cube_code,version=1):
+    def _query_cubeMeasures(self,cube_code):
         request_url = r'{0}{1}/cubes/{2}/measures?overview=false&paged=false'.format(self.path_catalog,
                         self.workspaces[self.version],cube_code)
         resp = requests.get(request_url)
         cube_measures = resp.json()['response'][0]    
         return cube_measures
     
-    def _query_cubeDimensions(self,cube_code,version=1):
+    def _query_cubeDimensions(self,cube_code):
         request_url = r'{0}{1}/cubes/{2}/dimensions?overview=false&paged=false'.format(self.path_catalog,
                         self.workspaces[self.version],cube_code)
         resp = requests.get(request_url)
@@ -188,7 +186,7 @@ class __WaPOR_API_class(object):
         keys=rows_codes+ ['raster_id','bbox','time_code']
         df_dict = { i : [] for i in keys }
         for irow,row in df.iterrows():
-            for i in range(len(row)-1):
+            for i in range(len(row)):
                 if row[i]['type']=='ROW_HEADER':
                     key_info=row[i]['value']
                     df_dict[keys[i]].append(key_info)
@@ -197,8 +195,8 @@ class __WaPOR_API_class(object):
                         df_dict['time_code'].append(time_info[0]['code'])
                 if row[i]['type']=='DATA_CELL':
                     raster_info=row[i]['metadata']['raster']
-                    df_dict['raster_id'].append(raster_info['id'])
-                    df_dict['bbox'].append(raster_info['bbox'])                    
+            df_dict['raster_id'].append(raster_info['id'])
+            df_dict['bbox'].append(raster_info['bbox'])                    
         df_sorted=pd.DataFrame.from_dict(df_dict)
         return df_sorted            
     
@@ -362,7 +360,7 @@ class __WaPOR_API_class(object):
                 
                 
     def getCropRasterURL(self,bbox,cube_code,
-                          time_code,rasterId,APIToken,print_job=True):
+                          time_code,rasterId,APIToken,season=None,stage=None,print_job=False):
         '''
         bbox: str
             latitude and longitude
@@ -391,9 +389,32 @@ class __WaPOR_API_class(object):
         cube_measure_code=cube_info['measure']['code']
         cube_dimensions=cube_info['dimension']
         
+        dimension_params=[]
+        
         for cube_dimension in cube_dimensions:
             if cube_dimension['type']=='TIME':
                 cube_dimension_code=cube_dimension['code']
+                dimension_params.append({
+                "code": cube_dimension_code,
+                "values": [
+                time_code
+                ]
+                })
+            if cube_dimension['code']=='SEASON':                
+                dimension_params.append({
+                "code": 'SEASON',
+                "values": [
+                season
+                ]
+                })
+            if cube_dimension['code']=='STAGE':                
+                dimension_params.append({
+                "code": 'STAGE',
+                "values": [
+                stage
+                ]
+                })                
+        #print(dimension_params)
         
         #Query payload
         query_crop_raster={
@@ -411,14 +432,7 @@ class __WaPOR_API_class(object):
               "workspaceCode": self.workspaces[self.version],
               "language": "en"
             },
-            "dimensions": [
-                   {
-                "code": cube_dimension_code,
-                "values": [
-                  time_code
-                ]
-              }
-            ],
+            "dimensions": dimension_params,
             "measures": [
               cube_measure_code
             ],

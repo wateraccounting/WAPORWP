@@ -19,17 +19,14 @@ WaPOR.AETI_dekadal(Dir='C:/Temp/', Startdate='2009-02-24', Enddate='2009-03-09',
 """
 import pickle
 import os
-from .AET_dekadal import main as AET_dekadal
-from .NPP_dekadal import main as NPP_dekadal
-from .LCC_yearly import main as LCC_yearly
-from .T_dekadal import main as T_dekadal
-from .RET_dekadal import main as RET_dekadal
-from .PCP_dekadal import main as PCP_dekadal
 from .WaporAPI import __WaPOR_API_class
+from .download_dekadal import main as download_dekadal
+from .download_monthly import main as download_monthly
+from .download_yearly import main as download_yearly
+from .download_daily import main as download_daily
+from .download_seasonal import main as download_seasonal
 
-
-__all__ = ['AET_dekadal','NPP_dekadal','LCC_yearly',
-           'T_dekadal','RET_dekadal','PCP_dekadal']
+__all__ = ['download_dekadal','download_monthly','download_yearly','download_daily']
 __doc__ = """module for FAO WAPOR API"""
 __version__ = '0.1'
 
@@ -49,4 +46,4 @@ else:
 API.Token=wapor_api_token
 
 # load catalog
-API.getCatalog()
+#API.getCatalog()

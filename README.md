@@ -49,6 +49,7 @@ The scripts to download and process the WaPOR data for land and water productivi
 #### i) Install python and jupyter notebook using the Anaconda distribution: https://www.anaconda.com/products/individual
 Use the anaconda installer, which is tailored to different operating system: window (64-Bit and 32-Bit), MacOS (64-Bit) or Linux system.
 >Read more on Jupyter notebook: https://jupyter.org/, https://packaging.python.org/overview/
+**Steps to run Jupyter notebook** refer from https://github.com/wateraccounting/WAPOROCW/blob/master/README.md
 
 #### ii) Install packages: 
 ##### Packages such as GDAL, pyshp can be installed using pip or conda. 
@@ -71,6 +72,7 @@ The protocol has six modules, which are described in detail in the following sec
 **Figure 1.** Flow chart for downloading WaPOR data and calculate performance indicators, land and water productivity and productivity gaps (Left) and a screenshot of the Jupyter notebook for the six modules (Right). 
 
 ## 3.1	Download WaPOR data (Module 0)
+**Notebook:** https://github.com/wateraccounting/WAPORWP/blob/master/Notebooks/Module_0_WaPOR_data_bulk_download.ipynb
 ##### Step 0a Import modules/libraries
 ##### Step 0b Read the geographical extent of the study area
 ##### Step 0c Bulk-download WaPOR data for the study area extent
@@ -87,6 +89,7 @@ The script is pre-set at downloading decadal data from 1 January 2009 to 31 Dece
 
 
 ## 3.2	Pre-processing WaPOR data (Module 1) 
+**Notebook:** https://github.com/wateraccounting/WAPORWP/blob/master/Notebooks/Module_1_WaPOR_data_preparation.ipynb
 ##### Step 1a Import modules/libraries 
 ##### Step 1b Resample raster data 
 ##### Step 1c Filter non-cropped area using land cover map and project boundary 
@@ -96,6 +99,7 @@ In the example case, we identified the area for analysis using a shapefile (proj
 For the analyses it is important to select a homogeneous area with one single crop type and similar crop season. 
 
 ## 3.3	Computing Seasonal Water Consumption & Net Primary Production (Module 2) 
+**Notebook:** http://localhost:8888/notebooks/Module_2_SeasonalWaterConsumption%26NetPrimaryProduction.ipynb
 ##### Step 2a Set up: Import modules/libraries 
 ##### Step 2b Defining function and crop season
 ##### Step 2b Calculate seasonal T, ET, RET, ETp, NPP 
@@ -103,6 +107,7 @@ For agricultural purposes the seasonal values are important, these are calculate
 ![title](ReadmeIMG/Fig_M2.png)
 
 ## 3.4	Calculate performance indicators (Module 3)
+**Notebook:** http://localhost:8888/notebooks/Module_3_CalculatePerformanceIndicators.ipynb
 This module is used to calculate a number of performance indicators, namely uniformity, beneficial fraction, adequacy and relative water deficit.  
 ##### Step 3a Set up 
 ##### Step 3b Calculate Uniformity and Equity
@@ -120,6 +125,7 @@ Adequacy (A) is the measure of the degree of agreement between available water a
 Relative Water Deficit (RWD) provides an indication of the level of water shortage found in the irrigation system. It is calculated using the equation described in FAO 66 (Steduto et al., 2012) by applying for a mono-crop system, where the actual ET is compared to the maximum ET.
 
 ## 3.5	Land and water productivity (Module 4)
+**Notebook:** http://localhost:8888/notebooks/Module_4_CalculateLand%26WaterProductivity.ipynb
 ##### Step 4a Set up 
 ##### Step 4b Calculate land productivity: i) biomass and ii) crop yield
 **Land productivity** is is defined as the above-ground biomass production or yield in ton/ha/season, which are estimated from the seasonal net primary production using the following equations: 
@@ -131,6 +137,7 @@ The parameters used in these equations are crop-specific and vary under differen
 **Biomass and crop Water productivity** is estimated as the ratio of above-ground biomass or yield over actual evapotranspiration. 
 
 ## 3.6	Productivity gaps and production projection (Module 5)
+**Notebook:** http://localhost:8888/notebooks/Module_5_BrightSpots%26ProductivityGaps.ipynb
 ##### Step 5a Set up 
 ##### Step 5b Calculate the target productivity
 The **target productivity** is a target for land and water productivity which is attainable under the local climatic conditions. This step of the script describes how the target is set and how bright spots are identified and how the productivity gap (related to the target) is estimated.

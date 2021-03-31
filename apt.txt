@@ -1,2 +1,4 @@
 gdal-bin
 python3-gdal
+grass-core
+grass-dev

@@ -1,4 +1,4 @@
 numpy
 pandas
 pyshp
-gdal
+python3-gdal

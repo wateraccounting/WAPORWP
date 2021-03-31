@@ -1,0 +1,5 @@
+numpy==1.16.4
+pandas==0.24.2
+pyshp==2.1.0
+gdal==2.3.3
+pyshp==2.1.0

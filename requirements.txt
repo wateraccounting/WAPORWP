@@ -2,4 +2,4 @@ numpy
 pandas
 pyshp
 proj
-gdal
+python3-gdal

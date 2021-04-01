@@ -1,3 +1,4 @@
+rasterio
 numpy
 pandas
 pyshp

@@ -1,0 +1,10 @@
+name: conda-environment
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - pip
+  - pip:
+    - pyshp
+    - gdal

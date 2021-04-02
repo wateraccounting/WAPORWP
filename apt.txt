@@ -4,3 +4,4 @@ python-dev
 libgdal-dev
 gdal-bin
 python-gdal
+gdal`

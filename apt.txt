@@ -1,6 +1,6 @@
 g++
 gcc
-python3-dev
+python-dev
 libgdal-dev
 gdal-bin
-python3-gdal
+python-gdal

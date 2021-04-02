@@ -3,4 +3,4 @@ pandas
 pyshp
 proj
 matplotlib
-gdal==2.2.3
+gdal

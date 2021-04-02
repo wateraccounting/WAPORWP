@@ -1,13 +1,3 @@
-conda update conda    
-sudo apt-get install libgdal-dev gdal-bin
-
-export CPLUS_INCLUDE_PATH=/usr/include/gdal
-export C_INCLUDE_PATH=/usr/include/gdal
-
-# check gdal version with 
-gdal-config --version
-
-echo '
 name: raster-pipeline
 channels:
 - defaults
@@ -17,11 +7,11 @@ dependencies:
 - numpy
 - ipython
 - libspatialindex
-- libgdal=USE_GDAL_VERSION
-- gdal=USE_GDAL_VERSION
+- libgdal=2.3.3
+- gdal=2.3.3
 - pip
 - pip:
   - numpy>=1.18.5
-  - GDAL==USE_GDAL_VERSION
-  - pyproj>=2.6.1.post1
+  - GDAL==2.3.3
+  - pyproj
   - rasterio>=1.1.5

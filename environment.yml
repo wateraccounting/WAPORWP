@@ -1,17 +1,16 @@
-name: raster-pipeline
+name: waporwp
 channels:
-- defaults
+- conda-forge
 dependencies:
 - python=3.7.*
 - cython
 - numpy
 - ipython
 - libspatialindex
-- libgdal=2.3.3
-- gdal=2.3.3
+- libgdal
 - pip
 - pip:
-  - numpy>=1.18.5
-  - GDAL==2.3.3
+  - numpy
+  - gdal
   - pyproj
-  - rasterio>=1.1.5
+  - rasterio

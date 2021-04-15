@@ -16,7 +16,7 @@
 
 With contributions from: Quan Pan, Lauren Zielinski, Solomon Seyoum
 
-#### Cite as: 
+**Cite as:** 
 Chukalla A.D., Mul M., Tran, B., Karimi, P. wateraccounting/WAPORWP: Standardized protocol for land and water productivity analyses using WaPOR (v1.1). Zenodo. http://doi.org/10.5281/zenodo.4641360, October 2020.
 
 # 1	Introduction 

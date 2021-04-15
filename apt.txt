@@ -1,6 +1,0 @@
-g++
-gcc
-python3-dev
-libgdal-dev
-gdal-bin
-python3-gdal

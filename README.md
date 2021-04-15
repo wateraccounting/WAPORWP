@@ -2,7 +2,7 @@
 
 # <font color='#ff009a'> Standardized protocol for land and water productivity analyses using WaPOR</font> 
 ### Version 1.1
-**Project**: ***Water Productivity Improvement in Practice (Water-PIP)** 
+**Project**: ***Water Productivity Improvement in Practice (Water-PIP)***
 <br/>**Prepared by IHE Delft**
 <br/>**October 2020**
 

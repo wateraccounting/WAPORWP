@@ -41,7 +41,7 @@ The scripts to download and process the WaPOR data for land and water productivi
 * GDAL 2.3.3
 * pyshp 2.1.0 
 
-## 2.1	Install python, Jupyter notebook and libraries (packages)
+## 2.2	Install python, Jupyter notebook and libraries (packages)
 #### i) Install python and jupyter notebook using the Anaconda distribution: https://www.anaconda.com/products/individual
 Use the anaconda installer, which is tailored to different operating system: window (64-Bit and 32-Bit), MacOS (64-Bit) or Linux system.
 >Read more on Jupyter notebook: https://jupyter.org/, https://packaging.python.org/overview/
@@ -124,7 +124,7 @@ WaPOR and local data of Table 6 are used to implement the protocol. The Level 2 
 ### 4.2	WaPOR data consistency 
 The Level 2 data source of the WaPOR data is not consistent throughout the 10 years. Before 2014, the data is derived from the MODIS satellite (250 m resolution), which is resampled to 100 m. In 2014, PROBA-V came into orbit, which provides the WaPOR L2 data for the period after 2014. The analyses in this report show a clear break 2009-2013 and 2014 onwards in the data (e.g., the noise in the biomass-transpiration and biomasses relationship are much even with patch of scatter pixels, such as high biomass at zero transpiration which cannot be explained agronomical).   
 
-### 4.3.2	Results
+### 4.3	Results
 ![title](ReadmeIMG/Figmd_5.png) 
 ![title](ReadmeIMG/Figmd_6.png) 
 

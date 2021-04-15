@@ -9,7 +9,7 @@
 ![title](ReadmeIMG/Figmd_1.png)
 
 **Authors:** 
-* Abebe Chukalla (a.chukalla@un-ihe.org),
+* Abebe D. Chukalla (a.chukalla@un-ihe.org),
 * Marloes Mul, 
 * Bich Tran,
 * Poolad Karimi

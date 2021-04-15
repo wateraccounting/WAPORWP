@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+Modules/WaPOR/wapor_api_token.pickle
+Data

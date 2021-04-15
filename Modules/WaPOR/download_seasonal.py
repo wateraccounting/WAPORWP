@@ -29,7 +29,7 @@ def main(Dir, data='AETI',Startdate='2009-01-01', Enddate='2018-12-31',
     # Download data
     WaPOR.API.version=version
     bbox=[lonlim[0],latlim[0],lonlim[1],latlim[1]]
-    catalog=WaPOR.API.catalog
+    catalog=WaPOR.API.getCatalog()
     
     if level==1:
         cube_code=f"L1_{data}_S"

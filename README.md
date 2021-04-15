@@ -16,6 +16,9 @@
 
 With contributions from: Quan Pan, Lauren Zielinski, Solomon Seyoum
 
+## Cite as: 
+Chukalla A.D., Mul M., Tran, B., Karimi, P. wateraccounting/WAPORWP: Standardized protocol for land and water productivity analyses using WaPOR (v1.1). Zenodo. http://doi.org/10.5281/zenodo.4641360, October 2020.
+
 # 1	Introduction 
 The project Water Productivity Improvement in Practice (Water-PIP) aims to facilitate the increase in crop water productivity in DGIS partner countries in Africa and Near East and Northern Africa (NENA) region. It also aims to connect IT business solutions to the WaPOR database to improve the analyses and provide more insight into the database for practical applications. It will also capture practical solutions and link agribusinesses to improve land and water productivity. 
 
@@ -130,16 +133,14 @@ The Level 2 data source of the WaPOR data is not consistent throughout the 10 ye
 
 
 # 5	References
-Allen, R. G., Pereira, L. S., Raes, D., and Smith, M.: Crop evapotranspiration-Guidelines for computing crop water requirements-FAO Irrigation and drainage paper 56, Fao, Rome, 300, D05109, 1998.
+<br/>Allen, R. G., Pereira, L. S., Raes, D., and Smith, M.: Crop evapotranspiration-Guidelines for computing crop water requirements-FAO Irrigation and drainage paper 56, Fao, Rome, 300, D05109, 1998.
 <br/>Bastiaanssen, W. G., Van der Wal, T., and Visser, T.: Diagnosis of regional evaporation by remote sensing to support irrigation performance assessment, Irrigation and Drainage Systems, 10, 1-23, 1996.
 <br/>Doorenbos, J., and Kassam, A.: FAO irrigation and drainage paper No. 33 “Yield response to water”, FAO–Food and Agriculture Organization of the United Nations, Rome, 1979.
+<br/>FAO. 2020. WaPOR database methodology: Version 2 release, April 2020. Rome. https://doi.org/10.4060/ca9894en
 <br/>Karimi, P., Bongani, B., Blatchford, M., and de Fraiture, C.: Global satellite-based ET products for the local level irrigation management: An application of irrigation performance assessment in the sugarbelt of Swaziland, Remote Sensing, 11, 705, 2019.
 <br/>Smith, D., Inman-Bamber, N., and Thorburn, P.: Growth and function of the sugarcane root system, Field Crops Research, 92, 169-183, 2005.
 <br/>Villalobos, F. J., and Fereres, E.: Principles of agronomy for sustainable agriculture, Springer, 2016.
-<br/>WaPOR: The FAO portal to monitor Water Productivity through Open access of Remotely sensed derived data, 23 October, FAO, Rome, Italy, 2019.
 
-# 6 Cite as: 
-Chukalla A.D., Mul M., Tran, B., Karimi, P. wateraccounting/WAPORWP: Standardized protocol for land and water productivity analyses using WaPOR (v1.1). Zenodo. http://doi.org/10.5281/zenodo.4641360, October 2020.
 ```python
 
 ```

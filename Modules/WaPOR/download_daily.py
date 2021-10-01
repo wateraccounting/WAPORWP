@@ -14,7 +14,7 @@ np.warnings.filterwarnings('ignore')
 
 def main(Dir, data='RET', Startdate='2009-01-01', Enddate='2018-12-31', 
          latlim=[-40.05, 40.05], lonlim=[-30.5, 65.05],level=1, 
-         version = 2, Waitbar = 1):
+         version = 2, Waitbar = 1,cached_catalog=True):
     """
     This function downloads WaPOR daily data. 		
 
@@ -24,12 +24,13 @@ def main(Dir, data='RET', Startdate='2009-01-01', Enddate='2018-12-31',
     Enddate -- 'yyyy-mm-dd'
     latlim -- [ymin, ymax] (values must be between -40.05 and 40.05)
     lonlim -- [xmin, xmax] (values must be between -30.05 and 65.05)
+    cached_catalog -- True  Use a cached catalog. False Load a new catalog from the database
     """
-    print(f'\nDownload WaPOR Level {level} dekadal {data} data for the period {Startdate} till {Enddate}')
+    print(f'\nDownload WaPOR Level {level} daily {data} data for the period {Startdate} till {Enddate}')
 
     # Download data
     WaPOR.API.version=version
-    catalog=WaPOR.API.getCatalog()
+    catalog=WaPOR.API.getCatalog(cached=cached_catalog)
     bbox=[lonlim[0],latlim[0],lonlim[1],latlim[1]]
     
     if level==1:

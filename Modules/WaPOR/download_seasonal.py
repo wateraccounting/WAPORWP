@@ -13,7 +13,7 @@ from WaPOR import GIS_functions as gis
 
 def main(Dir, data='AETI',Startdate='2009-01-01', Enddate='2018-12-31', 
          latlim=[-40.05, 40.05], lonlim=[-30.5, 65.05],level=1, 
-         version = 2, Waitbar = 1):
+         version = 2, Waitbar = 1,cached_catalog=True):
     """
     This function downloads seasonal WAPOR LCC data
 
@@ -23,13 +23,14 @@ def main(Dir, data='AETI',Startdate='2009-01-01', Enddate='2018-12-31',
     Enddate -- 'yyyy-mm-dd'
     latlim -- [ymin, ymax] (values must be between -40.05 and 40.05)
     lonlim -- [xmin, xmax] (values must be between -30.05 and 65.05)
+    cached_catalog -- True  Use a cached catalog. False Load a new catalog from the database
     """
     print(f'\nDownload WaPOR Level {level} seasonal {data} data for the period {Startdate} till {Enddate}')
 
     # Download data
     WaPOR.API.version=version
     bbox=[lonlim[0],latlim[0],lonlim[1],latlim[1]]
-    catalog=WaPOR.API.getCatalog()
+    catalog=WaPOR.API.getCatalog(cached=cached_catalog)
     
     if level==1:
         cube_code=f"L1_{data}_S"

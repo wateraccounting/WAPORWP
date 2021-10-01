@@ -33,9 +33,9 @@ class __WaPOR_API_class(object):
         ''' 
 
         print('Loading WaPOR catalog...')
-        if cached:
-            catalog_pickle=self.cached_catalog[self.version]
-            with open(catalog_pickle, 'rb') as handle:
+        catalog_pickle=self.cached_catalog[self.version]
+        if cached:            
+            with open(catalog_pickle, 'rb') as handle: #read cached catalog
                 self.catalog=pickle.load(handle)        
         else:
             try:
@@ -53,6 +53,8 @@ class __WaPOR_API_class(object):
                 df['measure']=cubes_measure
                 df['dimension']=cubes_dimension
             self.catalog=df
+            with open(catalog_pickle, 'wb') as handle: #cache new catalog
+                pickle.dump(df,handle,protocol=pickle.HIGHEST_PROTOCOL) 
         print('Loading WaPOR catalog...Done')
         return self.catalog            
             
@@ -62,14 +64,13 @@ class __WaPOR_API_class(object):
         else:
             request_url = r'{0}{1}/cubes?overview=false&paged=false&tags=L{2}'.format(self.path_catalog,self.workspaces[self.version],level)
         resp = requests.get(request_url)
-        meta_data_items = resp.json()
-        
+        resp_vp = resp.json()        
         try:
-            response=meta_data_items['response']
+            response=resp_vp['response']
             df = pd.DataFrame.from_dict(response, orient='columns')
             return df
         except:
-            print('ERROR: No response')
+            print('\n ERROR: No response.',resp_vp['message'])
                         
 #    def _query_cubeInfo(self,cube_code):
 #        request_url = r'{0}{1}/cubes/{2}?overview=false'.format(self.path_catalog,
@@ -102,29 +103,44 @@ class __WaPOR_API_class(object):
         request_url = r'{0}{1}/cubes/{2}/measures?overview=false&paged=false'.format(self.path_catalog,
                         self.workspaces[self.version],cube_code)
         resp = requests.get(request_url)
-        cube_measures = resp.json()['response'][0]    
+        resp_vp=resp.json()
+        try:
+            cube_measures = resp_vp['response'][0]
+        except:
+            print('\n ERROR:',resp_vp['message'])
         return cube_measures
     
     def _query_cubeDimensions(self,cube_code,version=1):
         request_url = r'{0}{1}/cubes/{2}/dimensions?overview=false&paged=false'.format(self.path_catalog,
                         self.workspaces[self.version],cube_code)
         resp = requests.get(request_url)
-        cube_dimensions = resp.json()['response']
+        resp_vp=resp.json()
+        try:
+            cube_dimensions = resp_vp['response']
+        except:
+            print('\n ERROR:',resp_vp['message'])
         return cube_dimensions
     
     def _query_accessToken(self,APIToken):
         resp_vp=requests.post(self.path_sign_in,headers={'X-GISMGR-API-KEY':APIToken})
-        resp_vp = resp_vp.json()
-        self.AccessToken=resp_vp['response']['accessToken']
-        self.RefreshToken=resp_vp['response']['refreshToken']        
-        self.time_expire=resp_vp['response']['expiresIn'] 
+        resp_vp = resp_vp.json()        
+        try:
+            self.AccessToken=resp_vp['response']['accessToken']
+            self.RefreshToken=resp_vp['response']['refreshToken']        
+            self.time_expire=resp_vp['response']['expiresIn']
+        except:
+            print('\n ERROR:', resp_vp['message'])                      
         return self.AccessToken
+            
     
     def _query_refreshToken(self,RefreshToken):
         resp_vp=requests.post(self.path_refresh,params={'grandType':'refresh_token','refreshToken':RefreshToken})
         resp_vp = resp_vp.json()
-        self.AccessToken=resp_vp['response']['accessToken']
-        return self.AccessToken        
+        try:
+            self.AccessToken=resp_vp['response']['accessToken']            
+        except:
+            print('\n ERROR:', resp_vp['message'])           
+        return self.AccessToken
 
     def getAvailData(self,cube_code,time_range='2009-01-01,2018-12-31',
                      location=[],season=[],stage=[]):
@@ -235,15 +251,12 @@ class __WaPOR_API_class(object):
             
         resp = requests.post(self.path_query, json=query_load)
         resp_vp = resp.json() 
-        if resp_vp['message']=='OK':
-            try:
-                results=resp_vp['response']['items']
-                return pd.DataFrame(results)  
-            except:
-                print('ERROR: Cannot get list of available data')
-        else:
-            print(resp_vp['message'])
-                
+        try:
+            results=resp_vp['response']['items']              
+        except:
+            print('\n ERROR: Cannot get list of available data. ', resp_vp['message'])
+        return pd.DataFrame(results)
+            
     def _query_dimensionsMembers(self,cube_code,dims_code):
         base_url='{0}{1}/cubes/{2}/dimensions/{3}/members?overview=false&paged=false'       
         request_url=base_url.format(self.path_catalog,
@@ -253,15 +266,12 @@ class __WaPOR_API_class(object):
                                     )
         resp = requests.get(request_url)
         resp_vp = resp.json()
-        if resp_vp['message']=='OK':
-            try:
-                avail_items=resp_vp['response']
-                df=pd.DataFrame.from_dict(avail_items, orient='columns')
-                return df
-            except:
-                print('ERROR: Cannot get dimensions Members')
-        else:
-            print(resp_vp['message'])
+        try:
+            avail_items=resp_vp['response']
+            df=pd.DataFrame.from_dict(avail_items, orient='columns')            
+        except:
+            print('\n ERROR: Cannot get dimensions Members. ',resp_vp['message'])
+        return df
         
     def getLocations(self,level=None):
         '''
@@ -297,18 +307,17 @@ class __WaPOR_API_class(object):
             }                
         resp = requests.post(self.path_query, json=query_location)
         resp_vp = resp.json()  
-        if resp_vp['message']=='OK':
+        try:
             avail_items=resp_vp['response']
             df_loc = pd.DataFrame.from_dict(avail_items, orient='columns')
             self.locationsTable=df_loc
             df_CTY=df_loc.loc[(df_loc["l2"]==True)&(df_loc["type"]=='COUNTRY')]
             df_BAS=df_loc.loc[(df_loc["l2"]==True)&(df_loc["type"]=='BASIN')]
             self.list_countries=[rows['code'] for index, rows in df_CTY.iterrows()]
-            self.list_basins=[rows['code'] for index, rows in df_BAS.iterrows()]
-            return df_loc
-        else:
+            self.list_basins=[rows['code'] for index, rows in df_BAS.iterrows()]            
+        except:
             print(resp_vp['message'])
-           
+        return df_loc           
     
     def getRasterUrl(self,cube_code,rasterId,APIToken):
         #Get AccessToken
@@ -338,12 +347,11 @@ class __WaPOR_API_class(object):
         try:
             resp=resp_vp['response']
             expiry_date = datetime.datetime.now() + datetime.timedelta(seconds=int(resp['expiresIn']))
-            download_url = {'url': resp['downloadUrl'],'expiry_datetime': expiry_date}
-            return download_url
+            download_url = {'url': resp['downloadUrl'],'expiry_datetime': expiry_date}            
         except:
-            print('Error: Cannot get Raster URL')
-            
-    
+            print('\n ERROR: Cannot get Raster URL. ',resp_vp['message'])
+        return download_url       
+                
     def _query_jobOutput(self,job_url):
         '''
                  
@@ -366,8 +374,7 @@ class __WaPOR_API_class(object):
                 return output
             if resp['response']['status']=='COMPLETED WITH ERRORS':
                 contiue=False
-                print(resp['response']['log'])
-                
+                print(resp['response']['log'])                
                 
     def getCropRasterURL(self,bbox,cube_code,
                           time_code,rasterId,APIToken,season=None,stage=None,print_job=False):
@@ -583,17 +590,14 @@ class __WaPOR_API_class(object):
                
         #requests
         resp_query=requests.post(self.path_query,json=query_pixeltimeseries)
-        resp_vp=resp_query.json()
-        if resp_vp['message']=='OK':               
-            try:
-                results=resp_vp['response']
-                df=pd.DataFrame(results['items'],columns=results['header'])
-                return df
-            except:
-                print('Error: Server response is empty')
-                return None
-        else:
-            print(resp_vp['message'])
+        resp_vp=resp_query.json()             
+        try:
+            results=resp_vp['response']
+            df=pd.DataFrame(results['items'],columns=results['header'])                
+        except:
+            print('\n ERROR: Server response is empty. ',resp_vp['message'])
+        return df
+
 
                 
 

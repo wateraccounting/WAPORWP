@@ -42,6 +42,7 @@ if not os.path.exists(api_token_pickle):
 else:
     with open(api_token_pickle, 'rb') as handle:
         wapor_api_token=pickle.load(handle)
+        print(wapor_api_token)
         
 API.Token=wapor_api_token
 

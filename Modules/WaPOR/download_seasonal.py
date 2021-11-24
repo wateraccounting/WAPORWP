@@ -78,10 +78,9 @@ def main(Dir, data='AETI',Startdate='2009-01-01', Enddate='2018-12-31',
         download_url=WaPOR.API.getCropRasterURL(bbox,cube_code,
                                                row['time_code'],
                                                row['raster_id'],
-                                               WaPOR.API.Token,
+                                               WaPOR.API.APIToken,
                                                season=season_val[row['SEASON']],
-                                               stage=raster_stage,
-                                               print_job=False)               
+                                               stage=raster_stage)               
         filename='{0}.tif'.format(row['raster_id'])
         outfilename=os.path.join(Dir,filename)       
         download_file=os.path.join(Dir,'raw_{0}.tif'.format(row['raster_id']))

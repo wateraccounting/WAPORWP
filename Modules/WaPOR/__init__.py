@@ -31,7 +31,7 @@ __doc__ = """module for FAO WAPOR API"""
 __version__ = '0.1'
 
 # initiate class for .his-files
-API = __WaPOR_API_class()
+
 api_token_pickle=os.path.join(os.path.dirname(__file__),
                               'wapor_api_token.pickle')
 
@@ -39,12 +39,14 @@ if not os.path.exists(api_token_pickle):
     wapor_api_token=input('Insert WAPOR API Token: ')
     with open(api_token_pickle, 'wb') as handle:
         pickle.dump(wapor_api_token, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        Print("Saved API Token")    
 else:
     with open(api_token_pickle, 'rb') as handle:
         wapor_api_token=pickle.load(handle)
-        print(wapor_api_token)
-        
-API.Token=wapor_api_token
+        print("Obtained saved API Token")
+print("Your WaPOR API Token is saved into: {0}. \n If you wish to change your API Token, please delete this file".format(api_token_pickle))       
+APIToken=wapor_api_token
+API = __WaPOR_API_class(APIToken)
 
 # load catalog
 #API.getCatalog()

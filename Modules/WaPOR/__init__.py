@@ -39,7 +39,7 @@ if not os.path.exists(api_token_pickle):
     wapor_api_token=input('Insert WAPOR API Token: ')
     with open(api_token_pickle, 'wb') as handle:
         pickle.dump(wapor_api_token, handle, protocol=pickle.HIGHEST_PROTOCOL)
-        Print("Saved API Token")    
+        print("Saved API Token")    
 else:
     with open(api_token_pickle, 'rb') as handle:
         wapor_api_token=pickle.load(handle)

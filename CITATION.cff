@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Chukalla
+    given-names: Abebe D
+    orcid: https://orcid.org/0000-0002-6381-1201
+  - family-names: Mul
+    given-names: Marloes
+    orcid: https://orcid.org/0000-0001-9469-3909
+  - family-names: Tran
+    given-names: Bich
+    orcid: https://orcid.org/0000-0001-6301-2699
+  - family-names: Karimi
+    given-names: Poolad
+    orcid: https://orcid.org/0000-0002-5819-0981
+title: "Standardized protocol for land and water productivity analyses using WaPOR"
+version: 1.1
+doi: 10.5281/zenodo.4641360
+date-released: 2021-03-26

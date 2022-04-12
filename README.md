@@ -19,6 +19,7 @@ With contributions from: Quan Pan, Lauren Zielinski, Solomon Seyoum
 
 **Cite as:** 
 <br/>Chukalla, A.D., Mul, M., Tran, B., Karimi, P. Standardized protocol for land and water productivity analyses using WaPOR (v1.1). Zenodo. http://doi.org/10.5281/zenodo.4641360, October 2020.
+If you encounter problems, do let us know @waterpip_project@un-ihe.org
 
 # 1	Introduction 
 The project Water Productivity Improvement in Practice (Water-PIP) aims to facilitate the increase in crop water productivity in DGIS partner countries in Africa and Near East and Northern Africa (NENA) region. It also aims to connect IT business solutions to the WaPOR database to improve the analyses and provide more insight into the database for practical applications. It will also capture practical solutions and link agribusinesses to improve land and water productivity. 

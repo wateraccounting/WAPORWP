@@ -5,8 +5,12 @@ UNESCO-IHE 2017
  @author: Bert Coerver
 """
 import numpy as np
-import gdal
-import osr
+try:
+    import gdal
+    import osr
+except:
+    from osgeo import gdal
+    from osgeo import osr
 import os
 
 def GetGeoInfo(fh, subdataset = 0):

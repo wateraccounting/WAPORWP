@@ -5,8 +5,12 @@ Created on Tue Jul 30 14:16:35 2019
 @author: Bert Coerver
 """
 import numpy as np
-import gdal
-import osr
+try:
+    import gdal
+    import osr
+except:
+    from osgeo import gdal
+    from osgeo import osr
 import os
 
 def GetGeoInfo(fh, subdataset = 0):
